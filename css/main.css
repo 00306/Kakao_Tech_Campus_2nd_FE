@@ -1,14 +1,23 @@
-.parent {
-  width: 300px;
-  height: 400px;
-  background-color: orange;
+div {
+  color: red !important;
 }
 
-.child {
-  width: 100px;
-  height: inherit;
-  background-color: inherit;
-  position: fixed;
-  top: 100px;
-  right: 10px;
+#color_yellow {
+  color: yellow;
+}
+
+.color_green {
+  color: green;
+}
+
+div {
+  color: blue;
+}
+
+* {
+  color: darkblue;
+}
+
+body {
+  color: violet;
 }
