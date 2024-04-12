@@ -1,11 +1,15 @@
-.box {
-  width: 100px;
-  height: 100px;
-  background-color: orange;
-  transition: 1s;
+[type] {
+  background-color: pink;
 }
 
-.box:active {
-  width: 300px;
-  background-color: royalblue;
+[type="password"] {
+  background-color: red;
+}
+
+[disabled] {
+  background-color: orange;
+}
+
+[data-fruit-name] {
+  color: blueviolet;
 }
