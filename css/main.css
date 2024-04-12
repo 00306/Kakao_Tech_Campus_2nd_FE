@@ -1,23 +1,12 @@
 div {
-  color: red !important;
+  font-size: 50px;
 }
 
-#color_yellow {
-  color: yellow;
+div.hello {
+  color: red;
 }
 
-.color_green {
+/* 점수가 같을 땐 더 나중에 작성된 코드가 적용 */
+.hello {
   color: green;
-}
-
-div {
-  color: blue;
-}
-
-* {
-  color: darkblue;
-}
-
-body {
-  color: violet;
 }
