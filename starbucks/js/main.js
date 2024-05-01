@@ -7,10 +7,68 @@ searchEl.addEventListener("click", function () {
 
 searchInputEl.addEventListener("focus", function () {
   searchEl.classList.add("focused");
-  searchInputEl.setAttribute("placeholder", "í†µí•©ê²€ìƒ‰");
+  searchInputEl.setAttribute("placeholder", "?†µ?•©ê²??ƒ‰");
 });
 
 searchInputEl.addEventListener("blur", function () {
   searchEl.classList.remove("focused");
   searchInputEl.setAttribute("placeholder", "");
+});
+
+const badgeEl = document.querySelector("header .badges");
+
+window.addEventListener(
+  "scroll",
+  _.throttle(function () {
+    console.log(window.scrollY);
+
+    if (window.scrollY > 500) {
+      // ë°°ì?? ?ˆ¨ê¸°ê¸°
+      // gsap.to(?š”?†Œ, ì§??†?‹œê°?, ?˜µ?…˜);
+      gsap.to(badgeEl, 0.15, {
+        opacity: 0,
+        display: "none",
+      });
+    } else {
+      // ë°°ì?? ë³´ì´ê¸?
+      gsap.to(badgeEl, 0.15, {
+        opacity: 1,
+        display: "block",
+      });
+    }
+  }, 300)
+);
+
+const fadeEls = document.querySelectorAll(".visual .fade-in");
+fadeEls.forEach(function (fadeEl, index) {
+  gsap.to(fadeEl, 1, {
+    delay: (index + 1) * 0.7,
+    opacity: 1,
+  });
+});
+
+new Swiper(".promotion .swiper-container", {
+  slidesPerView: 3, // ÇÑ¹ø¿¡ º¸¿©ÁÙ ½½¶óÀÌµå °³¼ö
+  spaceBetween: 10, // ½½¶óÀÌµå »çÀÌ ¿©¹é
+  centeredSlides: true, // 1¹ø ½½¶óÀÌµå°¡ °¡¿îµ¥ º¸ÀÌ±â
+  loop: true,
+  autoplay: {
+    delay: 5000,
+  },
+
+  pagination: {
+    el: ".promotion .swiper-pagination", // ÆäÀÌÁö ¹øÈ£ ¿ä¼Ò ¼±ÅÃÀÚ
+    clickable: true, // »ç¿ëÀÚÀÇ ÆäÀÌÁö ¹øÈ£ ¿ä¼Ò Á¦¾î
+  },
+  navigation: {
+    prevEl: ".promotion .swiper-prev",
+    nextEl: ".promotion .swiper-next",
+  },
+});
+
+new Swiper(".notice-line .swiper-container", {
+  direction: "vertical",
+  autoplay: true,
+  loop: true,
+  autoplay: true,
 });
